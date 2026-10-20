@@ -36,3 +36,8 @@ morse_code = {
     "9": "----.",
     "0": "-----"
     } 
+
+# def userImput(userinput):
+#     userinput = input("Please enter what you would like to translate: ").capitalize()
+#     if userinput 
+print(morse_code["I"], ["S"], ["A"], ["A"], ["C"])
