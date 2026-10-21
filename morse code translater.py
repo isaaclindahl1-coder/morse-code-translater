@@ -37,7 +37,10 @@ morse_code = {
     "0": "-----"
     } 
 
-# def userImput(userinput):
-#     userinput = input("Please enter what you would like to translate: ").capitalize()
-#     if userinput 
-print(morse_code["I"], ["S"], ["A"], ["A"], ["C"])
+text = input("Enter what you would like translated (letters or numbers): ").capitalize()
+
+def encodeMorse(text):
+    morse_code = ""
+    for char in text.upper():
+        if char == " ":
+            
