@@ -37,6 +37,11 @@ morse_code_dict = {
     "0": "-----"
     } 
 
+reverse_morse_dict = {}
+
+for key, value in morse_code_dict.items():
+    reverse_morse_dict[value] = key
+
 english_text = input("Enter what you would like to translate: ").upper()
 morse_result = ""
 
@@ -53,7 +58,10 @@ def translate_to_morse(english_text):
 print(translate_to_morse(english_text))
 
 
-def decode_morse()
+morse_code = input("Enter the morse code you want to decode: ")
+english_result = ""
+
+def decode_morse():
 
 
 
