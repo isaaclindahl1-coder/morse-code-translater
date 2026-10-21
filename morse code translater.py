@@ -1,4 +1,4 @@
-morse_code = {
+morse_code_dict = {
     "A": ".-",
     "B": "-...",
     "C": "-.-.",
@@ -37,10 +37,37 @@ morse_code = {
     "0": "-----"
     } 
 
-text = input("Enter what you would like translated (letters or numbers): ").capitalize()
+english_text = input("Enter what you would like to translate: ").upper()
+morse_result = ""
 
-def encodeMorse(text):
-    morse_code = ""
-    for char in text.upper():
-        if char == " ":
-            
+def translate_to_morse(english_text):
+    morse_result = ""
+    for letter in english_text:
+        if letter in morse_code_dict:
+            morse_result += morse_code_dict[letter] + " "
+        elif letter == " ":
+            morse_result = morse_result.rstrip() + "   "
+
+    return morse_result.rstrip()
+
+print(translate_to_morse(english_text))
+
+
+def decode_morse()
+
+
+
+
+
+# for letter in english_text:
+#     print(letter)
+
+# for letter in english_text:
+#     if letter in morse_code_dict:
+#         print(morse_code_dict[letter])
+
+
+
+# morse_code = input("Enter what you would like to be translated to morse code: ")
+# morse_word = morse_code.split("   ")
+# morse_letter = morse_word.split(" ")
