@@ -42,10 +42,10 @@ reverse_morse_dict = {}
 for key, value in morse_code_dict.items():
     reverse_morse_dict[value] = key
 
-english_text = input("Enter what you would like to translate: ").upper()
 morse_result = ""
 
 def translate_to_morse(english_text):
+    english_text = input("Enter what you would like to translate to Morse code: ")
     morse_result = ""
     for letter in english_text:
         if letter in morse_code_dict:
@@ -54,8 +54,8 @@ def translate_to_morse(english_text):
             morse_result = morse_result.rstrip() + "   "
 
     return morse_result.rstrip()
+english_text = ""
 
-print(translate_to_morse(english_text))
 
 english_result = ""
 
@@ -71,10 +71,24 @@ def decode_morse():
                 english_result += reverse_morse_dict[letter]
         english_result += " "
     return english_result.strip()
-print(decode_morse())
 
-def main_menu(person_input):  
-    print("Select an opption:")
-    print("1. Encode text to Morse code")
-    print("2. Decode Morse code to text")
-    print("3. Exit")
+
+def main_menu():
+    while True: 
+        print("Select an opption:")
+        print("1. Encode text to Morse code")
+        print("2. Decode Morse code to text")
+        print("3. Exit")
+        choice = input("Select wich one you would like to do: ")
+        if choice == "1":
+            translate_to_morse(english_text)
+            print(translate_to_morse(english_text))
+        elif choice == "2":
+            decode_morse()
+            print(decode_morse())
+        elif choice == "3":
+            print("Goodbye!")
+            break
+        else:
+            print("That is not a valid choice please try again.")
+main_menu()
