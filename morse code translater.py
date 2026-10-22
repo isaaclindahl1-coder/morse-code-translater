@@ -60,7 +60,7 @@ english_text = ""
 english_result = ""
 
 def decode_morse():
-    morse_code = input("Enter the morse code you want to decode: ")
+    morse_code = input("Enter the morse code you want to decode: ").upper()
     morse_word = morse_code.split("   ")
     english_result =""
 
@@ -82,7 +82,7 @@ def main_menu():
         choice = input("Select wich one you would like to do: ")
         if choice == "1":
             translate_to_morse(english_text)
-            print(translate_to_morse(english_text))
+            print(translate_to_morse())
         elif choice == "2":
             decode_morse()
             print(decode_morse())
