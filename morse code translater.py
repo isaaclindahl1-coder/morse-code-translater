@@ -57,25 +57,24 @@ def translate_to_morse(english_text):
 
 print(translate_to_morse(english_text))
 
-
-morse_code = input("Enter the morse code you want to decode: ")
 english_result = ""
 
 def decode_morse():
+    morse_code = input("Enter the morse code you want to decode: ")
+    morse_word = morse_code.split("   ")
+    english_result =""
 
+    for word in morse_word:
+        morse_letters = word.split()
+        for letter in morse_letters:
+            if letter in reverse_morse_dict:
+                english_result += reverse_morse_dict[letter]
+        english_result += " "
+    return english_result.strip()
+print(decode_morse())
 
-
-
-
-# for letter in english_text:
-#     print(letter)
-
-# for letter in english_text:
-#     if letter in morse_code_dict:
-#         print(morse_code_dict[letter])
-
-
-
-# morse_code = input("Enter what you would like to be translated to morse code: ")
-# morse_word = morse_code.split("   ")
-# morse_letter = morse_word.split(" ")
+def main_menu(person_input):  
+    print("Select an opption:")
+    print("1. Encode text to Morse code")
+    print("2. Decode Morse code to text")
+    print("3. Exit")
