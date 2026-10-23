@@ -52,6 +52,8 @@ def translate_to_morse():
             morse_result += morse_code_dict[letter] + " "
         elif letter == " ":
             morse_result = morse_result.rstrip() + "   "
+        else:
+            print(f"[Warning] Character {letter} is not recognized.")
 
     return morse_result.rstrip()
 
@@ -69,6 +71,8 @@ def decode_morse():
         for letter in morse_letters:
             if letter in reverse_morse_dict:
                 english_result += reverse_morse_dict[letter]
+            else:
+                print(f"[Warning] One of the sequences you imputed was not recognized.")    
         english_result += " "
     return english_result.strip()
 
